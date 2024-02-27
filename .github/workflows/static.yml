@@ -37,8 +37,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '21'
-      - name: Install dependencies
-        run: npm install --save-dev
+      - name: Install sass
+        run: npm install --global sass
         working-directory: './frontend-static'
       - name: Run build script
         run: ./build.sh
