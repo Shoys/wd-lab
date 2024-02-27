@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<header>
+    <nav>
+        <ul id="nav-links">
+            <!-- Conditional rendering of navigation links based on user authentication and role -->
+            <li><a href="login.html">Login</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="teacher.html">Teacher's Dashboard</a></li>
+            <li><a href="student.html">Student's Dashboard</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section id="public-courses-list">
+        <h2>Courses List</h2>
+        <!-- Placeholder for dynamically loaded course list -->
+        <div class="course">
+            <h3>Course Name</h3>
+            <p>Description of the course...</p>
+        </div>
+        <!-- Repeat above div for each course -->
+    </section>
+</main>
+<footer>
+    <p>&copy; 2024 Course Platform</p>
+</footer>
+</body>
+</html>

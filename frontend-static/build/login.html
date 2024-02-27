@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="login.js" defer></script>
+</head>
+<body>
+<header>
+    <nav>
+        <ul id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+</header>
+<div id="login">
+    <div id="auth-section">
+        <div id="auth-toggle">
+            <button id="show-login" class="login-active">Login</button>
+            <button id="show-register">Register</button>
+        </div>
+        <div id="login-form" class="auth-form">
+            <h2>Login</h2>
+            <input type="text" id="login-username" placeholder="Username">
+            <input type="password" id="login-password" placeholder="Password">
+            <button class="auth-btn" onclick="login()" id="login-button">Login</button>
+        </div>
+        <div id="register-form" class="auth-form" style="display:none;">
+            <h2>Register</h2>
+            <input type="text" id="register-username" placeholder="Username">
+            <input type="password" id="register-password" placeholder="Password">
+            <input type="password" id="register-confirm-password" placeholder="Confirm Password">
+            <label for="is-teacher">
+                <input type="checkbox" id="is-teacher"> Register as Teacher
+            </label>
+            <button class="auth-btn" onclick="register()" id="register-button">Register</button>
+        </div>
+    </div>
+</div>
+<footer>
+    <p>&copy; 2024 Course Platform</p>
+</footer>
+</body>
+</html>

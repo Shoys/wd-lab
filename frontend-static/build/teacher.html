@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher's Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<header>
+    <nav>
+        <ul id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <!-- Conditional rendering of navigation links based on user authentication and role -->
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <div id="courses-list">
+        <div id="create-course">
+            <h2>Create New Course</h2>
+            <form id="create-course-form">
+                <input type="text" placeholder="Course Name" required>
+                <textarea placeholder="Course Description" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <!-- Placeholder for dynamically loaded list of courses -->
+        <div class="course">
+            <h3>Course Name</h3>
+            <p>Description of the course...</p>
+            <button>Edit</button>
+            <button>Delete</button>
+            <button>View Details</button>
+        </div>
+        <!-- Repeat above for each course -->
+    </div>
+</main>
+<footer>
+    <p>&copy; 2024 Course Platform</p>
+</footer>
+</body>
+</html>

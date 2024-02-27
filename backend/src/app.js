@@ -3,12 +3,12 @@ import authRoutes from './routes/authRoutes.js';
 import connectDB from './config/db.js';
 import courseRoutes from './routes/courseRoutes.js';
 import userRoutes from './routes/userRoutes.js';
-// import {protect, studentProtect, teacherProtect} from './middlewares/authMiddleware.js'
+import cors from 'cors';
 
 const app = express();
 await connectDB();
 app.use(express.json());
-// app.use(protect);
+app.use(cors());
 
 app.use(authRoutes);
 app.use(courseRoutes);

@@ -1,0 +1,285 @@
+@import './colors.scss';
+
+@keyframes weird-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes weird-animation-2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(2deg);
+  }
+}
+
+@mixin basic-element-defaults {
+  margin: 0;
+  padding: 0;
+  font-family: $font-stack;
+}
+
+body {
+  @include basic-element-defaults;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include basic-element-defaults;
+  font-weight: bold;
+}
+
+p {
+  @include basic-element-defaults;
+  margin-bottom: 1rem;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: $primary-color;
+  color: white;
+  padding: 1rem;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+#nav-links {
+  list-style: none;
+  display: flex;
+
+  li {
+    margin: 0 1rem;
+
+    a {
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@mixin courses-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: 100%;
+
+  & > * {
+    flex-grow: 1;
+    margin: 0.5rem;
+  }
+}
+
+#courses-list {
+  @include courses-list;
+}
+
+#create-course {
+  padding: 1rem;
+  max-width: 500px;
+}
+
+#create-course-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  * {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  button {
+    background-color: $primary-color;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: weird-animation 1s infinite;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+      animation: weird-animation-2 1s infinite alternate;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #create-course {
+    padding: 1rem;
+    width: 33%;
+  }
+  #create-course-form {
+    display: flex;
+    flex-direction: column;
+
+    input, textarea {
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      border: 1px solid $secondary-color;
+      border-radius: 4px;
+    }
+  }
+}
+
+.course {
+  margin-bottom: 1rem;
+  max-width: 350px;
+
+  button {
+    margin-right: 0.5rem;
+    background-color: $secondary-color;
+    color: white;
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($secondary-color, 10%);
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: $secondary-color;
+  color: white;
+}
+
+#profile-details {
+  padding: 1rem;
+
+  .profile-info p {
+    margin-bottom: 0.5rem;
+  }
+
+  #logout-btn {
+    background-color: $primary-color;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    margin-top: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  main {
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+#enrolled-courses, #course-requests, #public-courses-list {
+  @include courses-list;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+}
+
+#login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+  .auth-form {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  input[type="text"], input[type="password"], button, label {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+  }
+
+  .auth-btn {
+    margin-top: 1rem;
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+}
+
+#auth-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+
+  button {
+    background-color: $secondary-color;
+    color: white;
+    border: none;
+    margin: 0 0.5rem;
+    cursor: pointer;
+
+    &.login-active {
+      background-color: $primary-color;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+
+    &:not(.login-active) {
+      background-color: $secondary-color;
+
+      &:hover {
+        background-color: darken($secondary-color, 10%);
+      }
+    }
+  }
+}

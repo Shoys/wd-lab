@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<header>
+    <nav>
+        <ul id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <!-- Conditional rendering of navigation links based on user authentication and role -->
+            <li><a href="teacher.html">Teacher's Dashboard</a></li>
+            <li><a href="student.html">Student's Dashboard</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section id="profile-details">
+        <h2>Profile Details</h2>
+        <!-- Placeholder for dynamically loaded profile details -->
+        <div class="profile-info">
+            <p><strong>Name:</strong> John Doe</p>
+            <p><strong>Email:</strong> john.doe@example.com</p>
+            <!-- Additional profile details here -->
+        </div>
+        <button id="logout-btn">Logout</button>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2024 Course Platform</p>
+</footer>
+</body>
+</html>

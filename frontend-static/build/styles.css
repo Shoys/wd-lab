@@ -1,0 +1,260 @@
+@keyframes weird-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes weird-animation-2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(2deg);
+  }
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-bottom: 1rem;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 1rem;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+#nav-links {
+  list-style: none;
+  display: flex;
+}
+#nav-links li {
+  margin: 0 1rem;
+}
+#nav-links li a {
+  color: white;
+  text-decoration: none;
+}
+#nav-links li a:hover {
+  text-decoration: underline;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#courses-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: 100%;
+}
+#courses-list > * {
+  flex-grow: 1;
+  margin: 0.5rem;
+}
+
+#create-course {
+  padding: 1rem;
+  max-width: 500px;
+}
+
+#create-course-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#create-course-form * {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+#create-course-form button {
+  background-color: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  animation: weird-animation 1s infinite;
+}
+#create-course-form button:hover {
+  background-color: #0062cc;
+  animation: weird-animation-2 1s infinite alternate;
+}
+
+@media (min-width: 768px) {
+  #create-course {
+    padding: 1rem;
+    width: 33%;
+  }
+  #create-course-form {
+    display: flex;
+    flex-direction: column;
+  }
+  #create-course-form input, #create-course-form textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #6c757d;
+    border-radius: 4px;
+  }
+}
+.course {
+  margin-bottom: 1rem;
+  max-width: 350px;
+}
+.course button {
+  margin-right: 0.5rem;
+  background-color: #6c757d;
+  color: white;
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+.course button:hover {
+  background-color: #545b62;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #6c757d;
+  color: white;
+}
+
+#profile-details {
+  padding: 1rem;
+}
+#profile-details .profile-info p {
+  margin-bottom: 0.5rem;
+}
+#profile-details #logout-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+#profile-details #logout-btn:hover {
+  background-color: #0062cc;
+}
+
+@media (min-width: 768px) {
+  main {
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+#enrolled-courses, #course-requests, #public-courses-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: 100%;
+}
+#enrolled-courses > *, #course-requests > *, #public-courses-list > * {
+  flex-grow: 1;
+  margin: 0.5rem;
+}
+#enrolled-courses h2, #course-requests h2, #public-courses-list h2 {
+  margin-bottom: 1rem;
+}
+
+#login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+#login .auth-form {
+  width: 100%;
+  max-width: 400px;
+}
+#login input[type=text], #login input[type=password], #login button, #login label {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+#login .auth-btn {
+  margin-top: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+#login .auth-btn:hover {
+  background-color: #0062cc;
+}
+#login .auth-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+#auth-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+#auth-toggle button {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+#auth-toggle button.login-active {
+  background-color: #007bff;
+}
+#auth-toggle button.login-active:hover {
+  background-color: #0062cc;
+}
+#auth-toggle button:not(.login-active) {
+  background-color: #6c757d;
+}
+#auth-toggle button:not(.login-active):hover {
+  background-color: #545b62;
+}
+
+/*# sourceMappingURL=styles.css.map */
