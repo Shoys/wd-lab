@@ -39,13 +39,15 @@ jobs:
           node-version: '21'
       - name: Install dependencies
         run: npm install --save-dev
+        working-directory: './frontend-static'
       - name: Run build script
         run: ./build.sh
+        working-directory: './frontend-static'
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: 'build'
+          path: './frontend-static/build'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
